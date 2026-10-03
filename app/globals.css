@@ -60,7 +60,7 @@
 .bag-item-actions svg { width: 11px; }
 .bag-item-actions b { min-width: 12px; text-align: center; color: #eee8df; font: 400 13px Georgia, serif; }
 .bag-item-price { align-self: start; font: 400 18px Georgia, serif; white-space: nowrap; }
-.bag-summary { margin-top: auto; padding: 20px 28px 26px; border-top: 1px solid rgba(255,255,255,.1); background: #17181d; }
+.bag-summary { margin-top: 18px; padding: 20px 28px 26px; border-top: 1px solid rgba(255,255,255,.1); background: #17181d; }
 .bag-summary > div { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
 .bag-summary > div span { color: #9b979b; font-size: 11px; }
 .bag-summary > div strong { font: 400 25px Georgia, serif; color: #f2ece4; }
