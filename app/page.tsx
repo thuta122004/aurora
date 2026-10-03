@@ -17,6 +17,7 @@ export default function Page() {
   const [bagItems, setBagItems] = useState<Array<{ id: string; name: string; quantity: number; price: number; kind: 'single' | 'bundle' }>>([])
   const [bagMessage, setBagMessage] = useState('')
   const [bagOpen, setBagOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const scent = useMemo(() => scents.find((item) => item.id === active) ?? scents[0], [active])
   const bagCount = bagItems.reduce((total, item) => total + item.quantity, 0)
   const bagTotal = bagItems.reduce((total, item) => total + item.price * item.quantity, 0)
@@ -46,7 +47,8 @@ export default function Page() {
       <nav className="nav shell">
         <a className="brand" href="#top" aria-label="Aurora home"><span className="brand-mark" aria-hidden="true"><span /><i /></span><span className="brand-name">AURORA<small>STUDIO</small></span></a>
         <div className="nav-links"><a href="#scent">The collection</a><a href="#ritual">Our ritual</a><a href="#reviews">Stories</a></div>
-        <div className="nav-actions"><button className="bag-button" onClick={() => setBagOpen(true)} aria-label={`Shopping bag, ${bagCount} items`}><ShoppingBag /><span>{bagCount}</span></button><button className="menu-button" aria-label="Open menu"><Menu /></button></div>
+        <div className="nav-actions"><button className="bag-button" onClick={() => setBagOpen(true)} aria-label={`Shopping bag, ${bagCount} items`}><ShoppingBag /><span>{bagCount}</span></button><button className="menu-button" onClick={() => setMobileMenuOpen((open) => !open)} aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileMenuOpen}><Menu /></button></div>
+        {mobileMenuOpen && <div className="mobile-menu" role="dialog" aria-label="Mobile navigation"><a href="#scent" onClick={() => setMobileMenuOpen(false)}>The collection</a><a href="#ritual" onClick={() => setMobileMenuOpen(false)}>Our ritual</a><a href="#reviews" onClick={() => setMobileMenuOpen(false)}>Stories</a></div>}
       </nav>
 
       <section className="hero shell" id="top">
