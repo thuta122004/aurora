@@ -59,7 +59,7 @@ export default function Page() {
         </div>
         <div className={`candle-stage ${lit ? 'is-lit' : 'is-dim'}`}>
           <div className="halo" /><div className="orbit orbit-one" /><div className="orbit orbit-two" />
-          <div className="float-note note-one">quiet</div><div className="float-note note-two">100% soy wax</div>
+          <div className="float-note note-one">still</div><div className="float-note note-two">100% soy wax</div>
           <div className="candle-wrap"><div className="flame"><span /></div><div className="wick" /><div className="wax" style={{ background: `linear-gradient(135deg, ${scent.color}, #e9d2b3)` }} /><div className="jar" style={{ borderColor: scent.color }}><div className="jar-shine" /><div className="label"><span>AURORA</span><strong>{scent.name}</strong><small>hand-poured / 220g</small></div></div><div className="candle-shadow" /></div>
           <div className="stage-caption"><span>Selected scent</span><strong>{scent.name}</strong></div>
         </div>
